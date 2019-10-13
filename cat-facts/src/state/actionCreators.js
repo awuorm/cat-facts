@@ -12,11 +12,13 @@ export const getError = err => {
 export const catData = () => dispatch => {
   dispatch(fetchData());
   axios
-    .get("https://catfact.ninja/breeds?limit=1")
+    .get("https://cors-anywhere.herokuapp.com/https://catfact.ninja/breeds")
     .then(res => {
+        console.log("response from server", res);
       dispatch({ type: types.CAT_DATA, payload: res.data });
     })
     .catch(err => {
+        console.log("response from server",err.message);
       dispatch(getError(err.message));
     });
 };

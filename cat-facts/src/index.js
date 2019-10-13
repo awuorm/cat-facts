@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 
+import "./index.css";
+import App from "./App";
+import * as reducers from "../src/state/reducers";
+
 const monsterReducer = combineReducers({
-    catFacts: catFacts,
+    catFacts: reducers.catReducer,
 });
 
 const store = createStore (

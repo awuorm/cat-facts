@@ -1,7 +1,11 @@
 import React from 'react';
-import './App.css';
+import {connect} from "react-redux";
 
-function App(props) {
+import './App.css';
+import * as actionCreators from "../src/state/actionCreators";
+
+export function App(props) {
+  console.log("props from App", App);
   return (
     <div className="App">
      Hello from App!
@@ -9,4 +13,4 @@ function App(props) {
   );
 };
 
-export default App;
+export default connect(state => state,actionCreators.catData)(App);

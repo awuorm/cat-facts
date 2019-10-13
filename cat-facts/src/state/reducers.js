@@ -10,6 +10,6 @@ const initialCat = {
   export const catReducer = (state= initialCat, action) => {
       switch (action.type) {
           default:
-              state;
+            return  state;
       }
   }
