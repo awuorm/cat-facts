@@ -1,16 +1,26 @@
-import React from 'react';
-import {connect} from "react-redux";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 
-import './App.css';
-import * as actionCreators from "../src/state/actionCreators";
+import "./App.css";
+import { catData, catFactsData } from "../src/state/actionCreators";
+import CatList from "./components/CatList";
+import  CatFacts  from "./components/CatFacts";
 
 export function App(props) {
-  console.log("props from App", App);
+  const { catFacts, catFactsData, catData } = props;
+  useEffect(() => {
+    catData();
+    catFactsData();
+  }, [catFacts.cats]);
   return (
     <div className="App">
-     Hello from App!
+      <CatFacts/>
+      <CatList />
     </div>
   );
-};
+}
 
-export default connect(state => state,actionCreators.catData)(App);
+export default connect(
+  state => state,
+  { catData, catFactsData }
+)(App);

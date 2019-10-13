@@ -11,6 +11,7 @@ import * as reducers from "../src/state/reducers";
 
 const monsterReducer = combineReducers({
     catFacts: reducers.catReducer,
+    realCatFacts: reducers.catFactReducer,
 });
 
 const store = createStore (
