@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import "./App.css";
 import { catData, catFactsData } from "../src/state/actionCreators";
 import CatList from "./components/CatList";
-import  CatFacts  from "./components/CatFacts";
-import {StyledApp} from "./styles";
+import CatFacts from "./components/CatFacts";
+import { StyledApp } from "./styles";
 import Spinner from "./components/Spinner";
 
 export function App(props) {
@@ -15,10 +15,11 @@ export function App(props) {
     catData();
     catFactsData();
   }, [catFacts.cats]);
-  return (
-    catFacts.cats.length === 0 ? <Spinner/>:
+  return catFacts.cats.length === 0 ? (
+    <Spinner />
+  ) : (
     <StyledApp>
-      <CatFacts/>
+      <CatFacts />
       <CatList />
     </StyledApp>
   );

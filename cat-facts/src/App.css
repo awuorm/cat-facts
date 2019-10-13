@@ -25,12 +25,11 @@
   display: inline-block;
   position: relative;
   background-color: black;
-  color: #D5B256;
+  color: #d5b256;
   font-size: 4em;
   width: 100vw;
   height: 100vh;
   text-align: center;
-
 }
 .lds-ripple div {
   position: absolute;
@@ -58,4 +57,3 @@
     opacity: 0;
   }
 }
-

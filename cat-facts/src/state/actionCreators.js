@@ -14,34 +14,33 @@ export const catData = () => dispatch => {
   axios
     .get("https://cors-anywhere.herokuapp.com/https://catfact.ninja/breeds")
     .then(res => {
-        console.log("response from server", res.data.data);
-      dispatch({ type: types.CAT_DATA, payload: res.data.data});
+      console.log("response from server", res.data.data);
+      dispatch({ type: types.CAT_DATA, payload: res.data.data });
     })
     .catch(err => {
-        console.log("response from server",err.message);
+      console.log("response from server", err.message);
       dispatch(getError(err.message));
     });
 };
 
-
 export const fetchFacts = () => {
-    return { type: types.FETCH_FACTS };
-  };
-  
-  export const getFactsError = err => {
-    return { type: types.GET_FACTS_ERROR, payload: err };
-  };
-  
-  export const catFactsData = () => dispatch => {
-    dispatch(fetchFacts());
-    axios
-      .get("https://cors-anywhere.herokuapp.com/https://catfact.ninja/facts")
-      .then(res => {
-          console.log("response from  catfacts server", res.data.data);
-        dispatch({ type: types.CAT_FACTS, payload: res.data.data});
-      })
-      .catch(err => {
-          console.log("error  from catFacts server",err.message);
-        dispatch(getFactsError(err.message));
-      });
-  };
+  return { type: types.FETCH_FACTS };
+};
+
+export const getFactsError = err => {
+  return { type: types.GET_FACTS_ERROR, payload: err };
+};
+
+export const catFactsData = () => dispatch => {
+  dispatch(fetchFacts());
+  axios
+    .get("https://cors-anywhere.herokuapp.com/https://catfact.ninja/facts")
+    .then(res => {
+      console.log("response from  catfacts server", res.data.data);
+      dispatch({ type: types.CAT_FACTS, payload: res.data.data });
+    })
+    .catch(err => {
+      console.log("error  from catFacts server", err.message);
+      dispatch(getFactsError(err.message));
+    });
+};
