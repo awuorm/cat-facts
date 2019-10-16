@@ -9,7 +9,6 @@ import { StyledApp } from "./styles";
 import Spinner from "./components/Spinner";
 
 export function App(props) {
-  console.log("props from app", props);
   const { catFacts, catFactsData, catData } = props;
   useEffect(() => {
     catData();
