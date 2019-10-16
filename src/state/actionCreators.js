@@ -14,7 +14,6 @@ export const catData = () => dispatch => {
   axios
     .get("https://cors-anywhere.herokuapp.com/https://catfact.ninja/breeds")
     .then(res => {
-      console.log("response from server", res.data.data);
       dispatch({ type: types.CAT_DATA, payload: res.data.data });
     })
     .catch(err => {
@@ -36,7 +35,6 @@ export const catFactsData = () => dispatch => {
   axios
     .get("https://cors-anywhere.herokuapp.com/https://catfact.ninja/facts")
     .then(res => {
-      console.log("response from  catfacts server", res.data.data);
       dispatch({ type: types.CAT_FACTS, payload: res.data.data });
     })
     .catch(err => {
