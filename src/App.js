@@ -13,7 +13,7 @@ export function App(props) {
   useEffect(() => {
     catData();
     catFactsData();
-  }, [catFacts.cats]);
+  }, [catFactsData, catData]);
   return catFacts.cats.length === 0 ? (
     <Spinner />
   ) : (
