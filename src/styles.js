@@ -10,6 +10,33 @@ export const StyledCat = styled.div`
   border-radius: 10em;
 `;
 
+export const StyledSpinnerDiv = styled.div`
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #01233F;
+`;
+
+export const StyledSpinnerImg = styled.img`
+  margin-top: 35vh;
+  padding: 1px;
+  margin-right: 5px;
+  margin-left: 5px;
+  animation: roll 3s infinite;
+  transform: rotate(30deg);
+  /* opacity: 0.7; */
+  @keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+`;
+
+
+
 export const StyledCatImg = styled.img`
   border-radius: 10em;
   margin-top: 1em;
