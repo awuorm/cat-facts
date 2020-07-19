@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Cat from "./Cat";
 
 export const CatList = props => {
-  const { catFacts, realCatFacts } = props;
+  const { catFacts } = props;
   return (
     <div>
       {catFacts.cats.map((cat, index) => (
